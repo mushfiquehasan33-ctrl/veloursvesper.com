@@ -1,0 +1,1291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Velours & Vesper — Premium E-Commerce</title>
+    <!-- Elegant Typography from Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..700;1,400..700&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <style>
+        /* Color Palette Variables (Muted Mist Blue and Deep Burgundy) */
+        :root {
+            --burgundy-deep: #4A0311;
+            --burgundy-main: #6B1D2F;
+            --burgundy-light: #8B263E;
+            --mist-light: #F1F1FB;
+            --mist-mid: #E1E1F5;
+            --mist-blue: #C5C5ED;
+            --text-dark: #2A2438;
+            --glass-bg: rgba(241, 241, 251, 0.6);
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: var(--mist-light);
+            /* Soft, high-definition background texture using overlapping organic radial gradients */
+            background-image: 
+                radial-gradient(circle at 10% 20%, rgba(197, 197, 237, 0.25) 0%, transparent 40%),
+                radial-gradient(circle at 90% 80%, rgba(107, 29, 47, 0.05) 0%, transparent 50%),
+                radial-gradient(circle at 50% 15%, rgba(225, 225, 245, 0.4) 0%, transparent 60%),
+                radial-gradient(circle at 30% 65%, rgba(197, 197, 237, 0.15) 0%, transparent 50%),
+                radial-gradient(circle at 80% 40%, rgba(107, 29, 47, 0.03) 0%, transparent 40%);
+            background-attachment: scroll;
+            color: var(--text-dark);
+            line-height: 1.7;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* Header & Navigation */
+        header {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+            border-bottom: 1px solid rgba(197, 197, 237, 0.4);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .navbar {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1.2rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--burgundy-main);
+            letter-spacing: 1px;
+            text-decoration: none;
+        }
+
+        .logo span {
+            color: var(--mist-blue);
+            font-weight: 300;
+            font-style: italic;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2.5rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-dark);
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--burgundy-main);
+        }
+
+        /* Hero Banner Section */
+        .hero {
+            max-width: 1200px;
+            margin: 3rem auto 0;
+            padding: 0 2rem;
+        }
+
+        .hero-banner {
+            background: linear-gradient(135deg, var(--burgundy-deep) 0%, var(--burgundy-main) 100%);
+            border-radius: 24px;
+            padding: 6rem 4rem;
+            color: #fff;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(74, 3, 17, 0.15);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .hero-banner::after {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -20%;
+            width: 80%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(197, 197, 237, 0.18) 0%, transparent 70%);
+            transform: rotate(-15deg);
+            pointer-events: none;
+        }
+
+        .hero-content {
+            max-width: 550px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-subtitle {
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            color: var(--mist-blue);
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+
+        .hero-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 3.5rem;
+            line-height: 1.15;
+            margin-bottom: 1.5rem;
+            font-weight: 600;
+        }
+
+        .hero-description {
+            font-size: 1.05rem;
+            color: rgba(255, 255, 255, 0.85);
+            margin-bottom: 2rem;
+            font-weight: 300;
+        }
+
+        /* Editorial Brand Narrative Section */
+        .brand-philosophy {
+            max-width: 900px;
+            margin: 6rem auto 4rem;
+            padding: 0 2rem;
+            text-align: center;
+        }
+
+        .philosophy-subtitle {
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            color: var(--burgundy-light);
+            margin-bottom: 1.5rem;
+            font-weight: 600;
+        }
+
+        .philosophy-text {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            line-height: 1.5;
+            color: var(--burgundy-deep);
+            margin-bottom: 2rem;
+            font-style: italic;
+        }
+
+        .philosophy-divider {
+            width: 80px;
+            height: 1px;
+            background: var(--mist-blue);
+            margin: 0 auto;
+        }
+
+        /* Section Header Styling */
+        .section-header {
+            max-width: 1200px;
+            margin: 6rem auto 2rem;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+        }
+
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.2rem;
+            color: var(--burgundy-deep);
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 3px;
+            background: var(--burgundy-main);
+            margin-top: 0.5rem;
+            border-radius: 2px;
+        }
+
+        /* Filter Controls */
+        .filter-wrapper {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            background: var(--glass-bg);
+            padding: 0.6rem 1.2rem;
+            border-radius: 12px;
+            border: 1px solid rgba(197, 197, 237, 0.5);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+        }
+
+        .filter-label {
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: var(--burgundy-main);
+        }
+
+        .filter-select {
+            background: #fff;
+            border: 1px solid var(--mist-blue);
+            color: var(--text-dark);
+            padding: 0.4rem 1rem;
+            border-radius: 8px;
+            font-size: 0.9rem;
+            font-family: inherit;
+            cursor: pointer;
+            outline: none;
+            transition: border-color 0.3s;
+        }
+
+        .filter-select:focus {
+            border-color: var(--burgundy-main);
+        }
+
+        /* Products Grid */
+        .products-container {
+            max-width: 1200px;
+            margin: 0 auto 6rem;
+            padding: 0 2rem;
+        }
+
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+            gap: 2.5rem;
+        }
+
+        .product-card {
+            background: rgba(255, 255, 255, 0.85);
+            border-radius: 20px;
+            overflow: hidden;
+            border: 1px solid rgba(197, 197, 237, 0.45);
+            box-shadow: 0 10px 30px rgba(197, 197, 237, 0.15);
+            transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s ease, opacity 0.4s ease;
+            opacity: 1;
+        }
+
+        .product-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 35px rgba(107, 29, 47, 0.08);
+            border-color: rgba(107, 29, 47, 0.2);
+        }
+
+        .product-img-wrapper {
+            position: relative;
+            width: 100%;
+            height: 380px;
+            overflow: hidden;
+            background-color: var(--mist-light);
+        }
+
+        .product-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .product-card:hover .product-img {
+            transform: scale(1.05);
+        }
+
+        /* Style A: Fadeaway Style (Bottom Vignette Gradient Mask) */
+        .img-fadeaway {
+            mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 65%, rgba(0,0,0,0) 100%);
+            -webkit-mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 65%, rgba(0,0,0,0) 100%);
+        }
+
+        /* Style B: Black & White to Color on Hover */
+        .img-bw-to-color {
+            filter: grayscale(100%);
+            transition: filter 0.6s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .product-card:hover .img-bw-to-color {
+            filter: grayscale(0%);
+        }
+
+        /* Product Card Details */
+        .product-info {
+            padding: 1.8rem;
+        }
+
+        .product-category {
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--burgundy-light);
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+        }
+
+        .product-name {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.4rem;
+            color: var(--text-dark);
+            margin-bottom: 0.8rem;
+            font-weight: 600;
+        }
+
+        .product-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 1.5rem;
+            padding-top: 1.2rem;
+            border-top: 1px solid var(--mist-mid);
+        }
+
+        .product-price {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: var(--burgundy-deep);
+        }
+
+        .add-to-cart-btn {
+            background: linear-gradient(135deg, var(--burgundy-main) 0%, var(--burgundy-deep) 100%);
+            color: #fff;
+            border: none;
+            padding: 0.7rem 1.4rem;
+            border-radius: 10px;
+            font-weight: 500;
+            font-size: 0.85rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 12px rgba(107, 29, 47, 0.15);
+        }
+
+        .add-to-cart-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 18px rgba(107, 29, 47, 0.3);
+            background: var(--burgundy-light);
+        }
+
+        /* Editorial Split Showcase */
+        .editorial-showcase {
+            background: rgba(255, 255, 255, 0.5);
+            border-top: 1px solid rgba(197, 197, 237, 0.4);
+            border-bottom: 1px solid rgba(197, 197, 237, 0.4);
+            padding: 8rem 2rem;
+            margin-top: 8rem;
+        }
+
+        .editorial-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 5rem;
+            align-items: center;
+        }
+
+        .editorial-image-box {
+            position: relative;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 30px 60px rgba(42, 36, 56, 0.1);
+        }
+
+        .editorial-image-box img {
+            width: 100%;
+            height: 550px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .editorial-text {
+            padding: 1rem;
+        }
+
+        .editorial-label {
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            color: var(--burgundy-light);
+            margin-bottom: 1.5rem;
+            font-weight: 600;
+            display: block;
+        }
+
+        .editorial-heading {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.8rem;
+            color: var(--burgundy-deep);
+            line-height: 1.2;
+            margin-bottom: 2rem;
+        }
+
+        .editorial-para {
+            color: var(--text-dark);
+            font-size: 1.1rem;
+            margin-bottom: 2.5rem;
+            line-height: 1.8;
+            font-weight: 300;
+        }
+
+        .editorial-button {
+            display: inline-block;
+            background: transparent;
+            color: var(--burgundy-main);
+            border: 1px solid var(--burgundy-main);
+            padding: 0.9rem 2rem;
+            font-size: 0.9rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            text-decoration: none;
+            border-radius: 8px;
+            transition: all 0.4s ease;
+        }
+
+        .editorial-button:hover {
+            background: var(--burgundy-main);
+            color: #fff;
+            transform: translateY(-2px);
+        }
+
+        /* Large Visual Lookbook (Grid Showcase) */
+        .lookbook-section {
+            padding: 8rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .lookbook-header {
+            text-align: center;
+            margin-bottom: 5rem;
+        }
+
+        .lookbook-grid {
+            display: grid;
+            grid-template-columns: repeat(12, 1fr);
+            gap: 2rem;
+        }
+
+        .lookbook-item {
+            position: relative;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.05);
+        }
+
+        .lookbook-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.8s ease;
+        }
+
+        .lookbook-item:hover img {
+            transform: scale(1.05);
+        }
+
+        .col-4 { grid-column: span 4; height: 350px; }
+        .col-8 { grid-column: span 8; height: 350px; }
+        .col-6 { grid-column: span 6; height: 500px; }
+
+        /* Process Timelines */
+        .process-section {
+            background: linear-gradient(180deg, transparent 0%, rgba(225, 225, 245, 0.4) 100%);
+            padding: 8rem 2rem;
+        }
+
+        .process-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .process-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 3rem;
+            margin-top: 5rem;
+        }
+
+        .process-card {
+            background: rgba(255, 255, 255, 0.7);
+            border: 1px solid rgba(197, 197, 237, 0.4);
+            padding: 3rem 2.5rem;
+            border-radius: 20px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .process-number {
+            font-family: 'Playfair Display', serif;
+            font-size: 4rem;
+            color: rgba(107, 29, 47, 0.1);
+            position: absolute;
+            top: 1rem;
+            right: 1.5rem;
+            font-weight: 700;
+        }
+
+        .process-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            color: var(--burgundy-deep);
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+
+        .process-desc {
+            font-size: 0.95rem;
+            color: var(--text-dark);
+            font-weight: 300;
+        }
+
+        /* Accordion FAQs */
+        .faq-section {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 8rem 2rem;
+        }
+
+        .faq-title {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .faq-accordion {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .faq-item {
+            background: rgba(255, 255, 255, 0.8);
+            border: 1px solid rgba(197, 197, 237, 0.4);
+            border-radius: 12px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .faq-item summary {
+            padding: 1.5rem 2rem;
+            font-weight: 600;
+            color: var(--burgundy-deep);
+            cursor: pointer;
+            list-style: none;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            outline: none;
+        }
+
+        .faq-item summary::-webkit-details-marker {
+            display: none;
+        }
+
+        .faq-item summary::after {
+            content: '+';
+            font-size: 1.4rem;
+            color: var(--burgundy-light);
+            transition: transform 0.3s;
+        }
+
+        .faq-item[open] summary::after {
+            transform: rotate(45deg);
+        }
+
+        .faq-content {
+            padding: 0 2rem 1.5rem;
+            font-size: 0.95rem;
+            color: var(--text-dark);
+            font-weight: 300;
+            border-top: 1px solid rgba(197, 197, 237, 0.2);
+            padding-top: 1rem;
+        }
+
+        /* Beautiful Spacious Newsletter Sign Up */
+        .newsletter-section {
+            max-width: 1200px;
+            margin: 0 auto 10rem;
+            padding: 0 2rem;
+        }
+
+        .newsletter-box {
+            background: linear-gradient(135deg, var(--burgundy-main) 0%, var(--burgundy-deep) 100%);
+            border-radius: 24px;
+            padding: 6rem 4rem;
+            text-align: center;
+            color: #fff;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .newsletter-box h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.8rem;
+            margin-bottom: 1rem;
+        }
+
+        .newsletter-box p {
+            max-width: 600px;
+            margin: 0 auto 2.5rem;
+            font-weight: 300;
+            color: rgba(255, 255, 255, 0.85);
+        }
+
+        .newsletter-form {
+            display: flex;
+            max-width: 500px;
+            margin: 0 auto;
+            gap: 1rem;
+        }
+
+        .newsletter-input {
+            flex: 1;
+            padding: 1rem 1.5rem;
+            border-radius: 10px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            background: rgba(255, 255, 255, 0.1);
+            color: #fff;
+            font-family: inherit;
+            outline: none;
+        }
+
+        .newsletter-input::placeholder {
+            color: rgba(255, 255, 255, 0.5);
+        }
+
+        .newsletter-submit {
+            background: #fff;
+            color: var(--burgundy-deep);
+            border: none;
+            padding: 1rem 2rem;
+            border-radius: 10px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .newsletter-submit:hover {
+            background: var(--mist-light);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--burgundy-deep);
+            color: rgba(255, 255, 255, 0.8);
+            padding: 6rem 2rem 3rem;
+            border-top: 1px solid rgba(197, 197, 237, 0.15);
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 3rem;
+            padding-bottom: 4rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .footer-about h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.6rem;
+            color: #fff;
+            margin-bottom: 1rem;
+        }
+
+        .footer-about p {
+            font-weight: 300;
+            font-size: 0.95rem;
+            line-height: 1.7;
+        }
+
+        .footer-links h4 {
+            color: #fff;
+            font-size: 1.1rem;
+            margin-bottom: 1.2rem;
+            font-weight: 600;
+        }
+
+        .footer-links ul {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 0.8rem;
+        }
+
+        .footer-links a {
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: color 0.3s;
+        }
+
+        .footer-links a:hover {
+            color: var(--mist-blue);
+        }
+
+        .footer-bottom {
+            max-width: 1200px;
+            margin: 2rem auto 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.85rem;
+            color: rgba(255, 255, 255, 0.5);
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        /* Responsive Design Rules */
+        @media (max-width: 992px) {
+            .editorial-container {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+            .editorial-image-box img {
+                height: 400px;
+            }
+            .lookbook-grid {
+                grid-template-columns: 1fr;
+            }
+            .col-4, .col-8, .col-6 {
+                grid-column: span 12;
+                height: 350px;
+            }
+            .process-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero-banner {
+                padding: 3rem 2rem;
+            }
+            .hero-title {
+                font-size: 2.5rem;
+            }
+            .section-header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Main Navigation Header -->
+    <header>
+        <nav class="navbar">
+            <a href="#" class="logo">velours<span>&vesper</span></a>
+            <ul class="nav-links">
+                <li><a href="#category1">Shop</a></li>
+                <li><a href="#lookbook">Lookbook</a></li>
+                <li><a href="#philosophy">Our Story</a></li>
+                <li><a href="#faq">FAQ</a></li>
+                <li><a href="#">Cart (0)</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Aesthetic Hero Section -->
+    <main>
+        <section class="hero">
+            <div class="hero-banner">
+                <div class="hero-content">
+                    <p class="hero-subtitle">The Autumn/Winter Edit</p>
+                    <h1 class="hero-title">Rich Textures, Quiet Elegance</h1>
+                    <p class="hero-description">Explore our latest collection of premium home accents and lifestyle accessories, designed for sophisticated modern spaces.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Editorial Philosophy Text Block -->
+        <section class="brand-philosophy" id="philosophy">
+            <p class="philosophy-subtitle">Crafted Intentionally</p>
+            <h2 class="philosophy-text">"In luxury, the details are not simply the design. They are the signature of modern patience and quiet artistry."</h2>
+            <div class="philosophy-divider"></div>
+        </section>
+
+        <!-- ================= CATEGORY 1: Curated Accents (5 Products - Dynamic Filtering) ================= -->
+        <section class="section-header" id="category1">
+            <h2 class="section-title">01. Curated Accents</h2>
+            <div class="filter-wrapper">
+                <span class="filter-label">Display Limit:</span>
+                <select id="max-items" class="filter-select" onchange="filterProducts()">
+                    <option value="5" selected>All 5 Items</option>
+                    <option value="4">Show 4 Items</option>
+                    <option value="3">Show 3 Items</option>
+                </select>
+            </div>
+        </section>
+
+        <section class="products-container">
+            <div class="products-grid" id="productGrid">
+                <!-- Product 1: Fadeaway Style -->
+                <article class="product-card">
+                    <div class="product-img-wrapper">
+                        <img src="https://images.unsplash.com/photo-1547887537-6158d64c35b3?auto=format&fit=crop&w=600&q=80" alt="Plum & Amber Scented Candle" class="product-img img-fadeaway">
+                    </div>
+                    <div class="product-info">
+                        <p class="product-category">Home Fragrance</p>
+                        <h3 class="product-name">Plum & Amber Velvet Candle</h3>
+                        <div class="product-footer">
+                            <span class="product-price">$48.00</span>
+                            <button class="add-to-cart-btn">Add to Cart</button>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Product 2: Fadeaway Style -->
+                <article class="product-card">
+                    <div class="product-img-wrapper">
+                        <img src="https://images.unsplash.com/photo-1528183429752-a97d0bf99b5a?auto=format&fit=crop&w=600&q=80" alt="Botanical Bath Soak" class="product-img img-fadeaway">
+                    </div>
+                    <div class="product-info">
+                        <p class="product-category">Self Care</p>
+                        <h3 class="product-name">Botanical Infused Bath Minerals</h3>
+                        <div class="product-footer">
+                            <span class="product-price">$36.00</span>
+                            <button class="add-to-cart-btn">Add to Cart</button>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Product 3: Fadeaway Style -->
+                <article class="product-card">
+                    <div class="product-img-wrapper">
+                        <img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?auto=format&fit=crop&w=600&q=80" alt="Velvet Lounge Chair Accent" class="product-img img-fadeaway">
+                    </div>
+                    <div class="product-info">
+                        <p class="product-category">Living Room</p>
+                        <h3 class="product-name">Burgundy Velvet Accent Cushion</h3>
+                        <div class="product-footer">
+                            <span class="product-price">$75.00</span>
+                            <button class="add-to-cart-btn">Add to Cart</button>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Product 4: Black & White to Color on Hover -->
+                <article class="product-card">
+                    <div class="product-img-wrapper">
+                        <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&w=600&q=80" alt="Rose Gold Chronograph" class="product-img img-bw-to-color">
+                    </div>
+                    <div class="product-info">
+                        <p class="product-category">Accessories</p>
+                        <h3 class="product-name">The Chrono Rose Gold Watch</h3>
+                        <div class="product-footer">
+                            <span class="product-price">$210.00</span>
+                            <button class="add-to-cart-btn">Add to Cart</button>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Product 5: Black & White to Color on Hover -->
+                <article class="product-card">
+                    <div class="product-img-wrapper">
+                        <img src="https://images.unsplash.com/photo-1584917865442-de89df76afd3?auto=format&fit=crop&w=600&q=80" alt="Burgundy Leather Tote" class="product-img img-bw-to-color">
+                    </div>
+                    <div class="product-info">
+                        <p class="product-category">Leather Goods</p>
+                        <h3 class="product-name">Burgundy Trapeze Leather Tote</h3>
+                        <div class="product-footer">
+                            <span class="product-price">$340.00</span>
+                            <button class="add-to-cart-btn">Add to Cart</button>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- ================= CATEGORY 2: Velvet Seating (3 Products) ================= -->
+        <section class="section-header">
+            <h2 class="section-title">02. Velvet Seating</h2>
+        </section>
+        <section class="products-container">
+            <div class="products-grid">
+                <article class="product-card">
+                    <div class="product-img-wrapper">
+                        <img src="https://images.unsplash.com/photo-1567538096630-e0c55bd6374c?auto=format&fit=crop&w=600&q=80" alt="Minimal velvet lounge armchair" class="product-img">
+                    </div>
+                    <div class="product-info">
+                        <p class="product-category">Furniture</p>
+                        <h3 class="product-name">Vesper Club Velvet Armchair</h3>
+                        <div class="product-footer">
+                            <span class="product-price">$850.00</span>
+                            <button class="add-to-cart-btn">Add to Cart</button>
+                        </div>
+                    </div>
+                </article>
+                <article class="product-card">
+                    <div class="product-img-wrapper">
+                        <img src="https://images.unsplash.com/photo-1592078615290-033ee584e267?auto=format&fit=crop&w=600&q=80" alt="Minimal modern stool" class="product-img">
+                    </div>
+                    <div class="product-info">
+                        <p class="product-category">Furniture</p>
+                        <h3 class="product-name">Sable Velvet Dressing Stool</h3>
+                        <div class="product-footer">
+                            <span class="product-price">$220.00</span>
+                            <button class="add-to-cart-btn">Add to Cart</button>
+                        </div>
+                    </div>
+                </article>
+                <article class="product-card">
+                    <div class="product-img-wrapper">
+                        <img src="https://images.unsplash.com/photo-1555041469-a586c61ea9bc?auto=format&fit=crop&w=600&q=80" alt="Burgundy sofa lounge" class="product-img">
+                    </div>
+                    <div class="product-info">
+                        <p class="product-category">Furniture</p>
+                        <h3 class="product-name">Monarch Tufted Velvet Sofa</h3>
+                        <div class="product-footer">
+                            <span class="product-price">$1,450.00</span>
+                            <button class="add-to-cart-btn">Add to Cart</button>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- ================= CATEGORY 3: Luminary & Candles (3 Products) ================= -->
+        <section class="section-header">
+            <h2 class="section-title">03. Luminary & Candles</h2>
+        </section>
+        <section class="products-container">
+            <div class="products-grid">
+                <article class="product-card">
+                    <div class="product-img-wrapper">
+                        <img src="https://images.unsplash.com/photo-1603006905003-be475563bc59?auto=format&fit=crop&w=600&q=80" alt="Minimal lamp light" class="product-img">
+                    </div>
+                    <div class="product-info">
+                        <p class="product-category">Lighting</p>
+                        <h3 class="product-name">Alabaster Globe Desk Lamp</h3>
+                        <div class="product-footer">
+                            <span class="product-price">$180.00</span>
+                            <button class="add-to-cart-btn">Add to Cart</button>
+                        </div>
+                    </div>
+                </article>
+                <article class="product-card">
+                    <div class="product-img-wrapper">
+                        <img src="https://images.unsplash.com/photo-1605651202774-7d573fd3f12d?auto=format&fit=crop&w=600&q=80" alt="Brass candleholder" class="product-img">
+                    </div>
+                    <div class="product-info">
+                        <p class="product-category">Home Accessories</p>
+                        <h3 class="product-name">Solid Brass Pillar Taper Holder</h3>
+                        <div class="product-footer">
+                            <span class="product-price">$95.00</span>
+                            <button class="add-to-cart-btn">Add to Cart</button>
+                        </div>
+                    </div>
+                </article>
+                <article class="product-card">
+                    <div class="product-img-wrapper">
+                        <img src="https://images.unsplash.com/photo-1608571423902-eed4a5ad8108?auto=format&fit=crop&w=600&q=80" alt="Ceramic wax burner" class="product-img">
+                    </div>
+                    <div class="product-info">
+                        <p class="product-category">Home Fragrance</p>
+                        <h3 class="product-name">Slate Gray Stoneware Wax Melter</h3>
+                        <div class="product-footer">
+                            <span class="product-price">$55.00</span>
+                            <button class="add-to-cart-btn">Add to Cart</button>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- ================= CATEGORY 4: Fine Leather Goods (3 Products) ================= -->
+        <section class="section-header">
+            <h2 class="section-title">04. Fine Leather Goods</h2>
+        </section>
+        <section class="products-container">
+            <div class="products-grid">
+                <article class="product-card">
+                    <div class="product-img-wrapper">
+                        <img src="https://images.unsplash.com/photo-1622560480605-d83c853bc5c3?auto=format&fit=crop&w=600&q=80" alt="Brown leather wallet" class="product-img">
+                    </div>
+                    <div class="product-info">
+                        <p class="product-category">Accessories</p>
+                        <h3 class="product-name">Slimline Bi-Fold Leather Wallet</h3>
+                        <div class="product-footer">
+                            <span class="product-price">$110.00</span>
+                            <button class="add-to-cart-btn">Add to Cart</button>
+                        </div>
+                    </div>
+                </article>
+                <article class="product-card">
+                    <div class="product-img-wrapper">
+                        <img src="https://images.unsplash.com/photo-1548036328-c9fa89d128fa?auto=format&fit=crop&w=600&q=80" alt="Leather luxury handbag" class="product-img">
+                    </div>
+                    <div class="product-info">
+                        <p class="product-category">Leather Goods</p>
+                        <h3 class="product-name">Obsidian Leather Day Clutch</h3>
+                        <div class="product-footer">
+                            <span class="product-price">$280.00</span>
+                            <button class="add-to-cart-btn">Add to Cart</button>
+                        </div>
+                    </div>
+                </article>
+                <article class="product-card">
+                    <div class="product-img-wrapper">
+                        <img src="https://images.unsplash.com/photo-1531938716357-224c16b5ace3?auto=format&fit=crop&w=600&q=80" alt="Leather passport cover" class="product-img">
+                    </div>
+                    <div class="product-info">
+                        <p class="product-category">Accessories</p>
+                        <h3 class="product-name">Classic Pebble Grain Passport Sleeve</h3>
+                        <div class="product-footer">
+                            <span class="product-price">$85.00</span>
+                            <button class="add-to-cart-btn">Add to Cart</button>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- ================= CATEGORY 5: Ceramic Vessels (3 Products) ================= -->
+        <section class="section-header">
+            <h2 class="section-title">05. Ceramic Vessels</h2>
+        </section>
+        <section class="products-container">
+            <div class="products-grid">
+                <article class="product-card">
+                    <div class="product-img-wrapper">
+                        <img src="https://images.unsplash.com/photo-1612196808214-b8e1d6145a8c?auto=format&fit=crop&w=600&q=80" alt="Minimalist ceramic vase" class="product-img">
+                    </div>
+                    <div class="product-info">
+                        <p class="product-category">Decor</p>
+                        <h3 class="product-name">Speckled Earth Terracotta Vase</h3>
+                        <div class="product-footer">
+                            <span class="product-price">$65.00</span>
+                            <button class="add-to-cart-btn">Add to Cart</button>
+                        </div>
+                    </div>
+                </article>
+                <article class="product-card">
+                    <div class="product-img-wrapper">
+                        <img src="https://images.unsplash.com/photo-1578749556568-bc2c40e68b61?auto=format&fit=crop&w=600&q=80" alt="Minimal ceramic dish" class="product-img">
+                    </div>
+                    <div class="product-info">
+                        <p class="product-category">Decor</p>
+                        <h3 class="product-name">Scalloped Matte White Tray</h3>
+                        <div class="product-footer">
+                            <span class="product-price">$40.00</span>
+                            <button class="add-to-cart-btn">Add to Cart</button>
+                        </div>
+                    </div>
+                </article>
+                <article class="product-card">
+                    <div class="product-img-wrapper">
+                        <img src="https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?auto=format&fit=crop&w=600&q=80" alt="Ceramic modern bowl" class="product-img">
+                    </div>
+                    <div class="product-info">
+                        <p class="product-category">Tableware</p>
+                        <h3 class="product-name">Raw Stone Edge Centerpiece Bowl</h3>
+                        <div class="product-footer">
+                            <span class="product-price">$115.00</span>
+                            <button class="add-to-cart-btn">Add to Cart</button>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- ================= CATEGORY 6: Timepieces & Brass (3 Products) ================= -->
+        <section class="section-header">
+            <h2 class="section-title">06. Timepieces & Brass</h2>
+        </section>
+        <section class="products-container">
+            <div class="products-grid">
+                <article class="product-card">
+                    <div class="product-img-wrapper">
+                        <img src="https://images.unsplash.com/photo-1542496658-e33a6d0d50f6?auto=format&fit=crop&w=600&q=80" alt="Luxury elegant watch" class="product-img">
+                    </div>
+                    <div class="product-info">
+                        <p class="product-category">Accessories</p>
+                        <h3 class="product-name">Cognac Leather Classique Watch</h3>
+                        <div class="product-footer">
+                            <span class="product-price">$240.00</span>
+                            <button class="add-to-cart-btn">Add to Cart</button>
+                        </div>
+                    </div>
+                </article>
+                <article class="product-card">
+                    <div class="product-img-wrapper">
+                        <img src="https://images.unsplash.com/photo-1614162692292-7ac56d7f7f1e?auto=format&fit=crop&w=600&q=80" alt="Vintage desk watch" class="product-img">
+                    </div>
+                    <div class="product-info">
+                        <p class="product-category">Accessories</p>
+                        <h3 class="product-name">Monolith Brass Table Chronometer</h3>
+                        <div class="product-footer">
+                            <span class="product-price">$195.00</span>
+                            <button class="add-to-cart-btn">Add to Cart</button>
+                        </div>
+                    </div>
+                </article>
+                <article class="product-card">
+                    <div class="product-img-wrapper">
+                        <img src="https://images.unsplash.com/photo-1590736969955-71cc94801759?auto=format&fit=crop&w=600&q=80" alt="Brass vintage compass" class="product-img">
+                    </div>
+                    <div class="product-info">
+                        <p class="product-category">Decor</p>
+                        <h3 class="product-name">Aged Brass Cartographers Compass</h3>
+                        <div class="product-footer">
+                            <span class="product-price">$80.00</span>
+                            <button class="add-to-cart-btn">Add to Cart</button>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- ================= CATEGORY 7: Woven Textiles (3 Products) ================= -->
+        <section class="section-header">
+            <h2 class="section-title">07. Woven Textiles</h2>
+        </section>
+        <section class="products-container">
+            <div class="products-grid">
+                <article class="product-card">
+                    <div class="product-img-wrapper">
+                        <img src="https://images.unsplash.com/photo-1580301762395-21ce84d00bc6?auto=format&fit=crop&w=600&q=80" alt="Woven fabric close-up" class="product-img">
+                    </div>
+                    <div class="product-info">
+                        <p class="product-category">Home Living</p>
+                        <h3 class="product-name">Heavy Rib Knit Woolen Throw</h3>
+                        <div class="product-footer">
+                            <span class="product-price">$160.00</span>
+                            <button class="add-to-cart-btn">Add to Cart</button>
+                        </div>
+                    </div>
+                </article>
+                <article class="product-card">
+                    <div class="product-img-wrapper">
+                        <img src="https://images.unsplash.com/photo-1600121848594-d8644e57abab?auto=format&fit=crop&w=600&q=80" alt="Woven carpet rug" class="product-img">
+                    </div>
+                    <div class="product-info">
+                        <p class="product-category">Living Room</p>
+                        <h3 class="product-name">Muted Oatmeal Woven Floor Rug</h3>
+                        <div class="product-footer">
+                            <span class="product-price">$380.00</span>
+                            <button class="add-to-cart-btn">Add to Cart</button>
+                        </div>
+                    </div>
+                </article>
+                <article class="product-card">
+                    <div class="product-img-wrapper">
+                        <img src="https://images.unsplash.com/photo-1543294001-f7cbfe92237e?auto=format&fit=crop&w=600&q=80" alt="Linen textile weave" class="product-img">
+                    </div>
+                    <div class="product-info">
+                        <p class="product-category">Kitchen</p>
+                        <h3 class="product-name">Pure Flax Hemp Table Runner</h3>
+                        <div class="product-footer">
+                            <span class="product-price">$45.00</span>
+                            <button class="add-to-cart-btn">Add to Cart</button>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- ================= CATEGORY 8: Fragrant Botanicals (3 Products) ================= -->
+        <section class="section-header">
+            <h2 class="section-title">08. Fragrant Botanicals</h2>
+        </section>
+        <section class="products-container">
+            <div class="products-grid">
+                <article class="product-card">
+                    <div class="product-img-wrapper">
+                        <img src="https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=600&q=80" alt="Essential oil dropper bottle" class="product-img">
+                    </div>
+                    <div class="product-info">
+                        <p class="product-category">Fragrance</p>
+                        <h3 class="product-name">Eucalyptus & Cedar Essence Oil</h3>
+                        <div class="product-footer">
+                            <span class="product-price">$32.00</span>
+                            <button class="add-to-cart-btn">Add to Cart</button>
+                        </div>
+                    </div>
+                </article>
+                <article class="product-card">
+                    <div class="product-img-wrapper">
+                        <img src="https://images.unsplash.com/photo-1595981267035-7b04ca84a82d?auto=format&fit=crop&w=600&q=80" alt="Fragrance sticks diffuser" class="product-img">
+                    </div>
+                    <div class="product-info">
+                        <p class="product-category">Fragrance</p>
+                        <h3 class="product-name">Charcoal Reed Diffuser Vial</h3>
+                        <div class="product-footer">
+                            <span class="product-price">$68.00</span>
+                            <button class="add-to-cart-btn">Add to Cart</button>
+                        </div>
+                    </div>
+                </article>
+                <article class="product-card">
+                    <div class="product-img-wrapper">
+                        <img src="https://images.unsplash.com/photo-1508746829417-e6f548d8d6ed?auto=format&fit=crop&w=600&q=80" alt="Dried flower bunch" class="product-img">
+                    </div>
+                    <div class="product-info">
+                        <p class="product-category">Decor</p>
+                        <h3 class="product-name">Preserved Bleached Fern Bundle</h3>
+                        <div class="product-footer">
+                            <span class="product-price">$28.00</span>
+                            <button class="add-to-cart-btn">Add to Cart</button>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- ================= CATEGORY 9: Minimalist Stationery (3 Products) ================= -->
+        <section class="section-header">
+            <h2 class="section-title">09. Minimalist Stationery</h2>
+        </section>
+        <section class="products-container">
+            <div class="products-grid">
+                <article class="product-card">
+                    <div class="product-img-wrapper">
+                        <img src="https://images.unsplash.com/photo-1586075010923-2dd4570fb338?auto=format&fit=crop&w=600&q=80" alt="Clean paper notebook" class="product-img">
+                    </div>
+                    <div class="product-info">
+                        <p class="product-category">Office</p>
+                        <h3 class="product-name">Raw Cotton Thread-Bound Journal</h3>
+                        <div class="product-footer">
+                            <span class="product-price">$30.00</span>
+                            <button class="add-to-cart-btn">Add to Cart</button>
+                        </div>
+                    </div>
+                </article>
+                <article class="product-card">
+                    <div class="product-img-wrapper">
+                        <img src="https://images.unsplash.com/photo-1583485088034-697b5bc54ccd?auto=format&fit=crop&w=600&q=80" alt="Sleek black pen" class="product-img">
+                    </div>
+                    <div class="product-info">
+                        <p class="product-category">Office</p>
+                        <h3 class="product-name">Matte Brass Architectural Pen</h3>
+                        <div class="product-footer">
+                            <span class="product-price">$85.00</span>
+                            <button class="add-to-cart-btn">Add to Cart</button>
+                        </div>
+                    </div>
+                </article>
+                <article class="product-card">
+                    <div class="product-img-wrapper">
+                        <img src="https://images.unsplash.com/photo-1544816155-12df9643f363?auto=format&fit=crop&w=600&q=80" alt="Leather notebook portfolio" class="product-img">
+                    </div>
+                    <div class="product-info">
+                        <p class="product-category">Office</p>
+                        <h3 class="product-n
